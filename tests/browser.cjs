@@ -1,0 +1,43 @@
+const {chromium}=require('playwright');
+const assert=require('node:assert/strict');
+const path=require('node:path');
+(async()=>{
+ const browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH || undefined});
+ const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];
+ page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://127.0.0.1:4173/');await page.locator('.home-hero').waitFor();
+ await page.screenshot({path:path.resolve('../qa-artifacts/home-desktop.png'),fullPage:true});
+ await page.getByRole('button',{name:'Search fragrances',exact:true}).click();
+ await page.locator('#searchInput').fill('lumiere');await page.locator('.search-result').waitFor();assert.equal(await page.locator('.search-result').count(),1);
+ await page.locator('.search-result').click();await page.locator('.product-info').waitFor();assert.match(await page.locator('h1').innerText(),/Ambre/);
+ await page.getByRole('button',{name:'100 ml',exact:false}).click();assert.match(await page.locator('#productPrice').innerText(),/62/);
+ await page.locator('[data-product-qty="1"]').click();await page.locator('[data-product-add]').click();
+ await page.getByRole('button',{name:'Open shopping bag'}).click();await page.locator('#bag[open]').waitFor();
+ assert.match(await page.locator('.bag-row p').innerText(),/100 ml/);assert.equal(await page.locator('.bag-row .quantity-selector span').innerText(),'2');
+ await page.locator('.order-note summary').click();await page.locator('#orderNote').fill('<img src=x onerror="window.__xss=1"> Gift reminder');
+ await page.reload();await page.getByRole('button',{name:'Open shopping bag'}).click();assert.equal(await page.locator('.bag-row .quantity-selector span').innerText(),'2');assert.match(await page.locator('#orderNote').inputValue(),/Gift reminder/);assert.equal(await page.evaluate(()=>window.__xss),undefined);
+ await page.getByRole('button',{name:'Close shopping bag',exact:true}).click();
+ await page.goto('http://127.0.0.1:4173/#/shop');await page.locator('#shopProducts .product-card').first().waitFor();
+ await page.locator('#familyFilter').selectOption('Floral');assert.equal(await page.locator('#shopProducts .product-card').count(),2);
+ await page.locator('[data-action="reset-filters"]').click();assert.equal(await page.locator('#shopProducts .product-card').count(),10);
+ await page.locator('#shopProducts [data-save="1"]').click();await page.goto('http://127.0.0.1:4173/#/saved');await page.locator('#savedProducts .product-card').waitFor();assert.equal(await page.locator('#savedProducts .product-card').count(),1);
+ await page.goto('http://127.0.0.1:4173/#/shop');await page.locator('#shopProducts').waitFor();await page.locator('[data-compare="1"]').click();await page.locator('[data-compare="2"]').click();await page.locator('#compareDock [data-action="compare"]').click();assert.equal(await page.locator('.compare-table thead th').count(),3);await page.locator('[data-close="modal"]').click();
+ await page.goto('http://127.0.0.1:4173/#/bundle');await page.locator('#bundleProducts').waitFor();
+ await page.locator('[data-bundle-count="5"]').click();await page.locator('#bundleSize').selectOption('30');
+ for(const id of [1,2,3,4,5])await page.locator(`#bundleProducts [data-bundle-item="${id}"]`).click();
+ assert.equal(await page.locator('.bundle-slot.filled').count(),5);await page.locator('[data-action="add-bundle"]').click();assert.equal(await page.locator('#bag .bag-row').count(),6);assert.equal(await page.locator('#bagCount').innerText(),'7');await page.getByRole('button',{name:'Close shopping bag',exact:true}).click();
+ await page.goto('http://127.0.0.1:4173/#/quiz');await page.locator('.quiz-choices').waitFor();
+ for(const answer of ['Fresh','Bright','Everyday','All'])await page.locator(`[data-quiz-answer="${answer}"]`).click();
+ assert.equal(await page.locator('.quiz-results .product-card').count(),3);assert.match(await page.locator('.quiz-results .product-title').first().innerText(),/Citrus Archive/);
+ await page.screenshot({path:path.resolve('../qa-artifacts/quiz-results-desktop.png'),fullPage:true});
+ await page.goto('http://127.0.0.1:4173/#/guide');await page.locator('[data-concentration="extrait"]').click();assert.match(await page.locator('#concentrationInfo h3').innerText(),/Extrait/);
+ const routes=['/','/shop','/product/ambre-lumiere','/bundle','/quiz','/guide','/story','/support','/shipping','/track','/locations','/partners','/rewards','/privacy','/terms','/reviews','/journal','/journal/understanding-scent-notes','/saved'];
+ for(const route of routes){await page.goto('http://127.0.0.1:4173/#'+route);await page.waitForTimeout(70);assert.ok(await page.locator('main').innerText(),route);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Desktop overflow '+route)}
+ await page.setViewportSize({width:390,height:844});
+ for(const route of routes){await page.goto('http://127.0.0.1:4173/#'+route);await page.waitForTimeout(70);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Mobile overflow '+route)}
+ await page.goto('http://127.0.0.1:4173/');await page.locator('.home-hero').waitFor();await page.screenshot({path:path.resolve('../qa-artifacts/home-mobile.png'),fullPage:true});
+ await page.locator('#menuToggle').click();assert.equal(await page.locator('#menuToggle').getAttribute('aria-expanded'),'true');await page.locator('.nav-toggle').click();await page.locator('.mega-menu a[href="#/shop?gender=Women"]').click();assert.equal(await page.locator('#shopProducts .product-card').count(),3);
+ await page.getByRole('button',{name:'Open shopping bag'}).click();await page.locator('[data-action="checkout"]').click();assert.match(await page.locator('#modalBody').innerText(),/not accepting payments/);await page.locator('#modal [data-action="cart"]').click();assert.equal(await page.locator('dialog[open]').count(),1);await page.getByRole('button',{name:'Close shopping bag',exact:true}).click();
+ await page.goto('http://127.0.0.1:4173/#/product/rose-de-minuit');await page.locator('.product-info').waitFor();await page.screenshot({path:path.resolve('../qa-artifacts/product-mobile.png'),fullPage:true});
+ assert.deepEqual(errors,[]);await browser.close();console.log('Browser QA passed: search, variants, persisted bag & safe notes, filters, favorites, comparison, five-item bundle, quiz, guide, all routes, mobile navigation, checkout gating; no JS errors or page overflow.');
+})().catch(e=>{console.error(e);process.exit(1)});
