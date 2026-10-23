@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check app.js && node --check catalog.js && node --check shop-core.js && node --check perfume-details.js && node --check reference-catalogs.js",
+    "check": "node --check app.js && node --check catalog.js && node --check shop-core.js && node --check actual-products.js && node --check reference-catalogs.js && node --check data/store-products.js",
     "test:browser": "node tests/browser.cjs",
     "test:details": "node tests/details-browser.cjs"
   },

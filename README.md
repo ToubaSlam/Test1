@@ -2,37 +2,32 @@
 
 Live: https://toubaslam.github.io/Test1/
 
-A responsive storefront combining shopping and discovery patterns inspired by ALT and Scentora, with original MAISON branding, content, artwork, and a proposed catalog. See [feature status](docs/FEATURES.md) for implemented features and outstanding commerce integrations.
+The main collection presents 225 actual perfume listings: 178 from ALT and 47 from Scentora in the current source snapshot. Products retain their original names, brands, pictures, bottle options, SKU, source prices, notes, and published ingredient details. Descriptions are written in original wording around the published facts, not copied marketing prose. No invented MAISON perfume is used in the active collection.
 
-## Local preview
+## Preview locally
 
-Run `python -m http.server 4173 --bind 127.0.0.1` from this folder, then open http://127.0.0.1:4173/. Use an HTTP server: ES module imports do not work by opening index.html as a file URL.
+Run `python -m http.server 4173 --bind 127.0.0.1` in this folder, then open http://127.0.0.1:4173/. ES modules require an HTTP server. No application build is required. GitHub Pages serves main/root; hash routes work under /Test1/.
 
-No build step is required. GitHub Pages serves the repository root from main. Routes use URL hashes, so product links and refreshes work under /Test1/.
+## Source files
 
-## Customize
+- `catalog.js`: store settings, actual perfume import, featured combinations, and original journal articles.
+- `data/store-products.js`: generated main-shop dataset, with exact source options and prices.
+- `actual-products.js` / `actual-products.css`: real product photos, detailed pages, note diagrams, ingredients, specifications, variant images, SKU/stock display, and sticky bag controls.
+- `app.js` / `site.css`: navigation, collections, filters, pagination, search, quiz, favorites, comparisons, bundles, and bag.
+- `shop-core.js`: variant selection, validated bag state, source-price totals, filtering, and matching.
+- `data/reference-catalogs.json`: the complete 288-listing public-feed snapshot, including bundles, gifts, and store services.
+- `reference-catalogs.js`: additional source-data browser. The actual perfumes also appear directly in the main shop.
 
-- `catalog.js`: proposed products, note profiles, size prices in integer cents, curated sets, articles, and integration availability.
-- `app.js`: page rendering and browser interactions.
-- `shop-core.js`: filtering, recommendations, bag validation, and price totals.
-- `site.css`: layouts and responsive styles. The previous style.css and storefront scripts are retained as history and are not loaded.
-- `assets/maison-campaign.png`: original artwork; the prompt is in `assets/GENERATION.md`.
+Source images stay branded ALT or Scentora; they are not relabeled as MAISON bottles. The former prototype scripts and generated campaign asset are retained but are not used to represent the actual products.
 
-## Validate
+## Refresh published facts
 
-Run `npm test` for unit tests and `npm run check` for syntax checks. For browser QA, run `npm install`, install Playwright Chromium with `npx playwright install chromium`, start the local server above, and run `npm run test:browser`. To use a system Chrome installation, set `CHROME_PATH` to its executable. Browser screenshots go to ../qa-artifacts/.
+Run `python scripts/import-reference-catalogs.py --snapshot-date YYYY-MM-DD`, then `python scripts/build-store-catalog.py`. Use the intended local snapshot date. Review changed source classifications, prices, stock, and test snapshot expectations before publishing. Public-feed prices may exclude automatic retailer campaign discounts. Note names extracted from retailer text do not establish a complete note pyramid; source diagrams are displayed when supplied.
 
-## Before accepting orders
+## Validation
 
-Products, prices, and variants are indicative. Checkout, identity, verified reviews, email collection, fulfillment, offers, rewards, and partner programs need confirmed business data and service integrations. No payments or orders are collected. Do not enable commerce by only toggling a config flag; use a backend that validates inventory, price, tax, and shipping.
+Run `npm test` and `npm run check`. For browser checks: install dependencies, install Playwright Chromium with `npx playwright install chromium`, start the preview server above, then run `npm run test:browser` and `npm run test:details`. Set `CHROME_PATH` to use a system Chrome executable instead. Screenshots are stored in ../qa-artifacts/.
 
+## Ordering status
 
-## Expanded perfume details and reference catalogs
-
-Every MAISON concept now has a product dossier: descriptive accords, three-stage scent journey, suggested moments, wardrobe pairings, sizes and per-10-ml prices, specification status, and a product-specific FAQ. See `perfume-details.js` and `perfume-details.css`.
-
-The inspiration library at `#/references` contains an attributed snapshot of 288 public ALT and Scentora listings. It includes images, note diagrams, published ingredient disclosures, options, SKU, source-feed price, availability, and searchable reference fields where available. These products are not MAISON inventory and cannot be added to the MAISON bag. Reference detail pages link to the original retailer. Feed pricing may exclude automatic storefront discounts.
-
-The snapshot lives in `data/reference-catalogs.json`. Refresh public factual data with `python scripts/import-reference-catalogs.py --snapshot-date YYYY-MM-DD`, supplying the intended local snapshot date. The script does not import marketing descriptions or customer reviews and does not access checkout or accounts.
-
-Run `npm test` for all 11 unit/data tests, and `npm run test:details` with the preview server and Playwright installed for the expanded product and reference-library browser checks.
+The bag is a browser-local plan using actual source product options and prices. MAISON inventory, payments, accounts, shipping, fulfillment, reviews, discounts, and gifts are not connected. Source availability is a dated retailer observation, not MAISON stock. Retailer promotions and guarantees do not automatically apply to a MAISON bag. Original retailer links are available on each perfume page.

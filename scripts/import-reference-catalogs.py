@@ -79,7 +79,7 @@ def classify(product):
     text = (product['title'] + ' ' + product.get('product_type', '') + ' ' + product['handle']).lower()
     if any(x in text for x in ('protection', 'upsell toggle', 'route shipping')):
         return 'Service'
-    if any(x in text for x in ('bundle', 'pack', '3 for', '3-for', 'trio', 'discovery set')):
+    if any(x in text for x in ('bundle', 'pack', '3 for', '3-for', 'trio', 'discovery set', 'buy-2-get-3')) or re.search(r'\bset\b|\bcollection\b|^\d+\s+for\s+\$|\badd-on\b', product['title'], re.I):
         return 'Bundle'
     if any(x in text for x in ('gift card', 'gift-card', 'ebook', 'e-book', 'free gift', 'giveaway', 'entry')):
         return 'Gift'
@@ -129,7 +129,7 @@ def extract(product, brand, host, currency):
               for image in product.get('images', []) if https(image.get('src', ''))][:6]
     variants = [dict(title=v['title'], sku=v.get('sku') or '', price=cents(v.get('price')),
                      compareAt=cents(v['compare_at_price']) if v.get('compare_at_price') else None,
-                     available=bool(v.get('available')), options=[v.get('option1'), v.get('option2'), v.get('option3')])
+                     available=bool(v.get('available')), imageUrl=https((v.get('featured_image') or {}).get('src','')), options=[v.get('option1'), v.get('option2'), v.get('option3')])
                 for v in product.get('variants', [])]
     notes = [name for name in NOTES if re.search(r'\b' + re.escape(name) + r'\b', note_text, re.I)]
     return dict(id=f"{brand}-{product['id']}", brand=brand, name=product['title'], handle=product['handle'],
