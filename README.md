@@ -25,3 +25,14 @@ Run `npm test` for unit tests and `npm run check` for syntax checks. For browser
 ## Before accepting orders
 
 Products, prices, and variants are indicative. Checkout, identity, verified reviews, email collection, fulfillment, offers, rewards, and partner programs need confirmed business data and service integrations. No payments or orders are collected. Do not enable commerce by only toggling a config flag; use a backend that validates inventory, price, tax, and shipping.
+
+
+## Expanded perfume details and reference catalogs
+
+Every MAISON concept now has a product dossier: descriptive accords, three-stage scent journey, suggested moments, wardrobe pairings, sizes and per-10-ml prices, specification status, and a product-specific FAQ. See `perfume-details.js` and `perfume-details.css`.
+
+The inspiration library at `#/references` contains an attributed snapshot of 288 public ALT and Scentora listings. It includes images, note diagrams, published ingredient disclosures, options, SKU, source-feed price, availability, and searchable reference fields where available. These products are not MAISON inventory and cannot be added to the MAISON bag. Reference detail pages link to the original retailer. Feed pricing may exclude automatic storefront discounts.
+
+The snapshot lives in `data/reference-catalogs.json`. Refresh public factual data with `python scripts/import-reference-catalogs.py --snapshot-date YYYY-MM-DD`, supplying the intended local snapshot date. The script does not import marketing descriptions or customer reviews and does not access checkout or accounts.
+
+Run `npm test` for all 11 unit/data tests, and `npm run test:details` with the preview server and Playwright installed for the expanded product and reference-library browser checks.

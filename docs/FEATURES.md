@@ -43,3 +43,14 @@ The launch strip and checkout availability screen remain explicit until these ar
 ## Validation
 
 Seven unit tests cover legacy cart migration, malformed data, sizes/quantities, integer price totals, filtering, accent-insensitive search, sorting, recommendations, bundles, and escaping. Automated Chrome checks cover the storefront flows and 19 routes at desktop and phone sizes, including persistence and note injection safety. Screenshots are saved outside the deployable source.
+
+
+## Expanded product information
+
+All ten proposed MAISON perfumes have distinct editorial dossiers, with accord descriptions, an opening/heart/finish narrative, suggested occasions, two wardrobe pairings, per-size unit prices, an eleven-question FAQ, specification disclosures, and a sticky add-to-bag control that retains the selected size. Descriptive suggestions are labeled as proposed profiles; ingredients, concentration, origin, testing, certification, and packaging details remain unconfirmed where no evidence exists.
+
+The separate inspiration library contains all 288 public-feed records retrieved on 2026-10-23: 221 ALT listings and 67 Scentora listings. This total includes perfumes, bundles, gifts, accessories, and store services. The library supports source/type/category filtering, text search, sorting, 24-item pagination, two/three-item factual comparison, galleries, note diagrams, option/SKU/price tables, snapshot availability, and retailer links. None of the reference listings are presented as MAISON inventory.
+
+Coverage in the snapshot: images for 288 records; ingredient disclosures for 170; note diagrams for 123; named inspiration references for 173. Missing fields remain explicitly unspecified. Public-feed prices can differ from automatic campaign or bundle prices on the source storefront. The importer omits retailer marketing prose and reviews; notes are names mentioned in the source text, with source diagrams supplied where available.
+
+Additional automated checks cover all ten dossier records, size-specific unit prices, exact source record representation, known source facts, product navigation, sticky purchase behavior, paired comparisons, reference filters and pagination, reference galleries, and overflow at 1440, 390, and 320 pixel widths. Eleven unit/data tests pass alongside both browser suites.
