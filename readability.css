@@ -1,0 +1,51 @@
+/* Readable copy and controls across every storefront route. */
+body{font-size:16px}
+p{font-size:16px!important;line-height:1.75}
+p.eyebrow,p.fine-print{font-size:14px!important}
+input,select,textarea{font-size:16px!important}
+.button,.card-button,.pill{line-height:1.5;letter-spacing:.5px;white-space:normal}
+.product-meta{flex-wrap:wrap;gap:6px}
+.product-title{flex-wrap:wrap;gap:6px}
+.product-notes{min-height:0}
+.product-facts>div,.reference-facts>div{min-width:0}
+.product-facts dd,.reference-facts dd{min-width:0;overflow-wrap:anywhere}
+.purchase-row{flex-wrap:wrap}
+.purchase-row>.button{flex:1;min-width:160px}
+.brand span{line-height:1.4;letter-spacing:1px}
+.actual-hero-art>a>span{letter-spacing:0;line-height:1.4}
+nav{flex-wrap:wrap;row-gap:16px}
+.footer-bottom{flex-wrap:wrap;gap:20px}
+#compareDock{flex-wrap:wrap}
+@media(max-width:600px){
+  .site-header header{height:116px;align-items:flex-start;justify-content:center;padding-top:10px;position:relative}
+  .site-header .brand{transform:none;font-size:26px;letter-spacing:2px;position:static;text-align:center}
+  .site-header .brand span{font-size:14px;letter-spacing:.4px;margin-top:3px}
+  .site-header .mobile-menu{position:absolute;left:4%;bottom:10px}
+  .site-header .header-actions{top:auto;bottom:10px;transform:none;gap:16px}
+  .announcement{line-height:1.6}
+  .announcement a{display:block;margin-left:0}
+  .launch-strip{line-height:1.5;flex-wrap:wrap;text-align:center}
+  .hero-copy{padding-bottom:20px}
+  .home-hero{min-height:0;display:block}
+  .actual-hero-art{position:relative;inset:auto;height:350px;width:100%}
+  .hero-copy .hero-quiz{max-width:100%;line-height:1.6}
+  .product-grid .card-button{padding:11px 6px;flex-wrap:wrap}
+  .product-grid .product-title>a{min-height:0}
+  .product-grid .product-notes{min-height:0}
+  .category-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .category-grid>a{min-width:0}
+  .category-grid a>span{white-space:normal;line-height:1.5}
+  .actual-brand-line{flex-wrap:wrap;gap:8px}
+  .actual-brand-line>span{max-width:100%}
+  .filter-sidebar{gap:16px}
+  .filter-sidebar label{min-width:0}
+  .filter-sidebar select{width:100%;min-width:0}
+  .sticky-purchase{gap:10px;padding-inline:4%}
+  .sticky-purchase .button{min-width:0;padding:12px}
+  .bag-row{grid-template-columns:60px minmax(0,1fr);gap:12px}
+  .bag-row>b{grid-column:2}
+  .footer-top{gap:30px 20px}
+  .footer-top>div{min-width:0}
+  .footer-bottom>div{flex-wrap:wrap;gap:14px}
+  html{scroll-padding-top:140px}
+}
