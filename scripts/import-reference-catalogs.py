@@ -153,7 +153,7 @@ def main():
     args = parser.parse_args()
     result = []
     sources = []
-    for slug, brand, host in [('alt', 'ALT', 'https://altfragrances.com'), ('scentora', 'Scentora', 'https://scentora-fragrance.com')]:
+    for slug, brand, host in [('scentora', 'Scentora', 'https://scentora-fragrance.com')]:
         if args.cached_input_directory:
             raw = json.loads((args.cached_input_directory / (slug+'-products-source.json')).read_text(encoding='utf-8'))['products']
         else:

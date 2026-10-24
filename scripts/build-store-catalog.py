@@ -1,4 +1,4 @@
-"""Build the main storefront from factual ALT/Scentora source records.
+"""Build the main storefront from factual Scentora source records.
 
 No competitor marketing prose is copied. Descriptions use original wording
 around published names, inspiration references, notes, and ingredient facts.
@@ -8,8 +8,8 @@ import re
 from pathlib import Path
 
 data=json.loads(Path('data/reference-catalogs.json').read_text(encoding='utf-8'))
-source=[p for p in data['products'] if p['kind']=='Perfume' and p['variants']]
-featured=[('ALT','inspired-by-baccarat-rouge-540'),('ALT','alternative-to-aventus'),('ALT','duchess'),('Scentora','inspired-by-imagination'),('ALT','inspired-by-lost-cherry'),('ALT','fleur-noire'),('Scentora','inspired-by-aventus'),('Scentora','inspired-by-delina'),('Scentora','inspired-by-lost-cherry'),('Scentora','inspired-by-baccarat-rouge')]
+source=[p for p in data['products'] if p['brand']=='Scentora' and p['kind']=='Perfume' and p['variants']]
+featured=[('Scentora',h) for h in ['inspired-by-imagination','inspired-by-aventus','inspired-by-delina','inspired-by-lost-cherry','inspired-by-baccarat-rouge']]
 ordered=[]
 for brand,handle in featured:
     item=next((p for p in source if p['brand']==brand and p['handle']==handle),None)
@@ -23,12 +23,13 @@ def family(p):
         if any(w in text for w in words):return name
     return 'Other'
 
+existing_file=Path('data/store-products.js')
+existing=json.loads(existing_file.read_text(encoding='utf-8').split('export const importedProducts=',1)[1].strip().removesuffix(';')) if existing_file.exists() else []
+stable_ids={p['sourceId']:p['id'] for p in existing}
+next_id=max(stable_ids.values(),default=225)+1
 products=[]
 for index,p in enumerate(ordered,1):
-    # Exact named references verified on the retailers' product/home pages.
-    verified_inspirations={('ALT','inspired-by-baccarat-rouge-540'):'Baccarat Rouge 540',('ALT','alternative-to-aventus'):'Aventus',('ALT','duchess'):'Delina',('ALT','inspired-by-lost-cherry'):'Lost Cherry',('ALT','fleur-noire'):'Black Opium'}
     p=dict(p)
-    p['inspiredBy']=verified_inspirations.get((p['brand'],p['handle']),p['inspiredBy'])
     variants=[]
     keys=set()
     for n,v in enumerate(p['variants']):
@@ -46,6 +47,10 @@ for index,p in enumerate(ordered,1):
     if p['notes']:description+=' Its published text mentions '+', '.join(p['notes'][:7])+('. Additional notes mentioned include '+', '.join(p['notes'][7:])+'.' if len(p['notes'])>7 else '.')
     if p['season']:description+=' The listing suggests '+p['season'].lower()+' wear.'
     if p['concentration']:description+=' Its stated concentration is '+p['concentration']+'.'
-    products.append(dict(id=index,slug=p['brand'].lower()+'-'+p['handle'],name=p['name'],brand=p['brand'],sourceId=p['id'],category=category,family=group,familyDerived=True,mood={'Fresh':'Bright','Floral':'Romantic','Woody':'Grounded','Gourmand':'Warm','Amber':'Warm','Fruity':'Bright'}.get(group,'Curious'),occasion=[],season=p['season'] or 'Not specified by retailer',color='#d7c8a3',tag=p['brand'],price=default['price'],defaultSize=default['size'],top=[],heart=[],base=[],notes=p['notes'],description=description,edit='signature' if index<=10 else 'new',variants=variants,source=p,snapshotDate=data['snapshotDate']))
+    stable_id=stable_ids.get(p['id'])
+    if stable_id is None:
+        stable_id=next_id
+        next_id+=1
+    products.append(dict(id=stable_id,slug=p['brand'].lower()+'-'+p['handle'],name=p['name'],brand=p['brand'],sourceId=p['id'],category=category,family=group,familyDerived=True,mood={'Fresh':'Bright','Floral':'Romantic','Woody':'Grounded','Gourmand':'Warm','Amber':'Warm','Fruity':'Bright'}.get(group,'Curious'),occasion=[],season=p['season'] or 'Not specified by retailer',color='#d7c8a3',tag=p['brand'],price=default['price'],defaultSize=default['size'],top=[],heart=[],base=[],notes=p['notes'],description=description,edit='signature' if index<=10 else 'new',variants=variants,source=p,snapshotDate=data['snapshotDate']))
 Path('data/store-products.js').write_text('// Generated from the attributed source snapshot. Refresh with scripts/build-store-catalog.py.\nexport const importedProducts='+json.dumps(products,ensure_ascii=False,separators=(',',':'))+';\n',encoding='utf-8')
-print(json.dumps({'products':len(products),'brands':{b:sum(p['brand']==b for p in products) for b in ['ALT','Scentora']},'featured':[{ 'id':p['id'],'name':p['name'],'brand':p['brand']} for p in products[:10]]}))
+print(json.dumps({'products':len(products),'brands':{b:sum(p['brand']==b for p in products) for b in ['Scentora']},'featured':[{ 'id':p['id'],'name':p['name'],'brand':p['brand']} for p in products[:10]]}))

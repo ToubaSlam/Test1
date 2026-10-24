@@ -2,7 +2,7 @@
 
 Live: https://toubaslam.github.io/Test1/
 
-The main collection presents 225 actual perfume listings: 178 from ALT and 47 from Scentora in the current source snapshot. Products retain their original names, brands, pictures, bottle options, SKU, source prices, notes, and published ingredient details. Descriptions are written in original wording around the published facts, not copied marketing prose. No invented Eden Musk perfume is used in the active collection.
+The main collection presents 47 actual Scentora perfume listings in the current source snapshot. Products retain their original names, brands, pictures, bottle options, SKU, source prices, notes, and published ingredient details. Descriptions are written in original wording around the published facts, not copied marketing prose. No invented Eden Musk perfume is used in the active collection.
 
 ## Preview locally
 
@@ -18,7 +18,7 @@ Run `python -m http.server 4173 --bind 127.0.0.1` in this folder, then open http
 - `data/reference-catalogs.json`: the complete 288-listing public-feed snapshot, including bundles, gifts, and store services.
 - `reference-catalogs.js`: additional source-data browser. The actual perfumes also appear directly in the main shop.
 
-Source images stay branded ALT or Scentora; they are not relabeled as Eden Musk bottles. The former prototype scripts and generated campaign asset are retained but are not used to represent the actual products.
+Source images stay branded Scentora; they are not relabeled as Eden Musk bottles. The former prototype scripts and generated campaign asset are retained but are not used to represent the actual products.
 
 ## Refresh published facts
 

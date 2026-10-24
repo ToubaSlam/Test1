@@ -1,17 +1,17 @@
 # Actual-perfume storefront
 
-The main shop now uses the actual ALT and Scentora perfume catalogs rather than a proposed Eden Musk collection. The current snapshot includes 225 perfume listings: 178 ALT and 47 Scentora. A separate source-data browser retains all 288 public listings, including non-perfume bundles, gifts, and store services.
+The main shop now uses the actual Scentora perfume catalogs rather than a proposed Eden Musk collection. The current snapshot includes 47 Scentora perfume listings. A separate source-data browser retains all 67 Scentora public listings, including non-perfume bundles, gifts, and store services.
 
 ## Product fidelity
 
 | Detail | Behavior |
 | --- | --- |
-| Names and brands | Original product names and clearly visible ALT/Scentora branding |
+| Names and brands | Original product names and clearly visible Scentora branding |
 | Product imagery | Actual retailer photos and galleries; no relabeled Eden Musk bottle art |
 | Descriptions | Original wording based on published fragrance facts and references |
-| Inspiration | Named retailer reference where reliably provided; featured ALT references checked against public product/home pages |
+| Inspiration | Named retailer reference where reliably provided |
 | Notes | Names mentioned in source text plus original retailer note diagrams; no invented top/heart/base assignments |
-| Bottle options | Exact listed variant titles, including ALT 30/60/100 ml and Scentora 50 ml where supplied |
+| Bottle options | Exact listed variant titles, including the Scentora 50 ml option where supplied |
 | SKU and prices | Exact source SKU and integer-cent prices; source compare-at values distinguished from designer retail price |
 | Variant photo | Matching source variant image selected where supplied |
 | Ingredients | Published ingredient disclosure; otherwise the missing source field is identified |
