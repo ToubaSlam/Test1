@@ -1,5 +1,9 @@
 # Eden Musk garden direction
 
+## Site-wide color palette
+
+`eden-palette.css` carries the selected campaign colors across navigation, menus, product cards, forms, sections, dialogs and the footer. Forest emerald `#0a2c23`, water teal `#17483f`, warm stone `#f1eadc`, ivory `#f5eddc` and muted gold `#c6a96b` define the palette. Pale product surfaces preserve the clarity of the original source photos. Checked nine routes at desktop and phone widths; 69 sampled text elements on solid dark surfaces passed the applicable WCAG AA contrast threshold. Text over the campaign image was reviewed visually.
+
 ## Selected emerald campaign
 
 The selected artwork is `assets/eden-emerald-garden.webp`, exported from the built-in image generation output. It preserves the stepped emerald bottle and square gold cap, uses a darker garden with layered greenery and distant light, and removes the closest foreground flowers. This image now appears in the homepage hero and bottle-design section. Ivory and gold text sits over a subtle dark overlay; the mobile layout shows the bottle first. Catalog product records and source photos remain unchanged.

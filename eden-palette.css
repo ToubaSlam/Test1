@@ -1,0 +1,107 @@
+/* Colors carried from the selected emerald bottle, shaded water and warm stone. */
+:root{--ink:#183c30;--muted:#4e6257;--paper:#f1eadc;--cream:#e7ddc9;--sage:#d8e1d0;--line:#c8c8ae;--accent:#124734;--gold:#c6a96b;--forest:#0a2c23;--water:#17483f;--ivory:#f5eddc}
+body{background:var(--paper)}
+select,textarea,input:not([type="range"]):not([type="checkbox"]):not([type="radio"]){background:#fbf4e6;color:#244533;border-color:#abb898}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline-color:#a77d34}
+.announcement{background:#061f19;color:#eadbb7;border-bottom:1px solid #a58a4b66}
+.announcement a{color:#f1dcaa;border-color:#bb9d60}
+.site-header{background:#0a2c23f7;color:var(--ivory);border-bottom:1px solid #b3965866}
+.site-header .brand{color:#efd599}
+.site-header .brand span{color:#d3d9bf}
+.site-header nav{background:#0a2c23;color:var(--ivory)}
+.site-header nav a:hover,.site-header nav button:hover{color:#efd599}
+.site-header .mega-menu{background:#103a2d;color:var(--ivory);border-color:#b3965866;box-shadow:0 16px 30px #00170e40}
+.site-header .mega-menu .eyebrow{color:#d1c393}
+.site-header .menu-feature{background:#1e4b39;color:var(--ivory);border:1px solid #a9925966}
+.site-header .menu-feature span,.site-header .menu-feature b{color:var(--ivory)}
+.site-header .tiny-count{background:#e8d4a1;color:#143b2c}
+.site-header .bag-button>span{border-color:#9eae83;color:#f1dcaa}
+.launch-strip{background:#174336;color:#e7e9d4;border-color:#65856966}
+.launch-strip .launch-detail{color:#d0dbc6}
+.status-dot{background:#d4bb78}
+.benefit-ribbon{background:#133b30;color:#e3d3a6;border-color:#b69a5b66}
+.benefit-ribbon i{color:#d4b873}
+.section-heading .eyebrow,.category-section>.eyebrow{color:#536342}
+.button{background:#124734;border-color:#124734;color:#fff5df}
+.button:hover:not(:disabled){background:#1c5d45;border-color:#1c5d45;box-shadow:0 5px 18px #082d2226}
+.button.secondary{background:transparent;color:#183c30;border-color:#a98e52}
+.button.secondary:hover{background:#124734;border-color:#124734;color:#fff5df}
+.button.light{background:#ead8aa;border-color:#ead8aa;color:#173c2e}
+.pill{background:#f8f1e4;border-color:#b8bca0;color:#244533}
+.pill.active,.pill.selected,.concentration-tool .pill.active{background:#164b37;border-color:#164b37;color:#fff3d6}
+.text-link{border-color:#9b864b}
+.text-link:hover{color:#715727}
+.signature-section,.category-section,.guide-teaser,.new-section,.journal-home,.shop-section{background:var(--paper)}
+.product-image.actual-product-image{background:#ece4d2!important;border-color:#c3c7ab}
+.product-image.actual-product-image .product-tag{background:#113b2ee8;color:#f1d79f;border:1px solid #b69a5b80}
+.product-image .quick-view{background:#f7efdeed;color:#224b38;border-color:#a5b197}
+.product-image .heart{background:#f7efdeed;color:#27513d}
+.product-image .heart.selected{color:#974431}
+.product-meta,.product-notes{color:#4e6257}
+.product-title>span,.product-price{color:#124734}
+.product-price small,.product-price del{color:#55634f}
+.compare-button{border-color:#a7b18f;color:#34513e}
+.compare-button.selected,.card-button.selected{background:#164b37;color:#fff3d6}
+.category-circle{background:radial-gradient(ellipse at 35% 30%,#f1e8cb,#cbd8bc);border-color:#9eaf8c}
+.bundle-intro{background:#cfdac4;border-block:1px solid #b7c2a1}
+.bundle-still{background:radial-gradient(ellipse at center,#f1e6c7,#a7bf99);border-color:#8ca47a}
+.curated-card.sage .curated-art{background:#cfdbc3}
+.curated-card.rose .curated-art{background:#e6d8bc}
+.curated-card.sand .curated-art{background:#dacda9}
+.bottle-atelier{background:#102f27;color:#f2e9d5;border-block:1px solid #a58a4b80}
+.bottle-atelier-art img{border-color:#a88e5066}
+.bottle-atelier .bottle-atelier-copy>p,.bottle-atelier .bottle-design-notes p,.bottle-atelier-art figcaption{color:#d5dfcb}
+.bottle-atelier .eyebrow,.bottle-atelier .bottle-design-notes>div>span,.bottle-atelier .text-link{color:#e3c68c}
+.bottle-atelier h2,.bottle-atelier h3{color:#f7edd7}
+.bottle-atelier h2 em{color:#e3c68c}
+.bottle-design-notes>div{border-color:#6e835766}
+.why-section{background:#173e30;color:#f7edd7;border-block:1px solid #9b895580}
+.why-section p,.why-section .values-grid p{color:#d4dfc8}
+.why-section .eyebrow,.why-section .values-grid article>span,.why-section .text-link{color:#e3c68c}
+.why-section .values-grid article{border-color:#69845a80}
+.reviews-section,.inspiration-entry,.eden-inspiration{background:#d8e1ce;border-color:#b0bda0}
+.review-empty{background:#f4eddc;border-color:#bac5a6}
+.garden-ornament{color:#92743b}
+.quiz-banner{background:linear-gradient(#092f27db,#092f27eb),url('assets/eden-emerald-garden.webp') center/cover;color:#f7edd7;border-block:1px solid #b59a5b80}
+.quiz-banner p,.quiz-banner .eyebrow{color:#e2dfbd}
+.quiz-banner .button,.newsletter .button{background:#e7d4a1;border-color:#e7d4a1;color:#173c2e}
+.quiz-banner .button:hover,.newsletter .button:hover{background:#f3e4bf;border-color:#f3e4bf}
+.newsletter{background:#103d32;color:#f7edd7;border-color:#ac9154}
+.newsletter>div>p:not(.eyebrow),.newsletter .fine-print{color:#d6e0cd}
+.newsletter .eyebrow{color:#e4c993}
+footer{background:#07291f;color:#eee8d4;border-color:#b49b5a}
+.footer-top .brand{color:#efd599}
+.footer-top .brand span,.footer-top p{color:#ccd7bd}
+.footer-top h3{color:#e3c78b}
+.footer-top a:not(.brand){color:#d6dfc9}
+.footer-top a:hover{color:#f4dba6}
+.footer-bottom{border-color:#67805a80;color:#cad6be}
+.footer-bottom a,.footer-bottom button{color:#e0e3cc}
+.page-top,.page-title{background:linear-gradient(115deg,#e7dec9,#d1ddc7);border-bottom:1px solid #afbd9c}
+.filter-sidebar input,.filter-sidebar select,.builder-options select,.reference-toolbar input,.reference-toolbar select{background:#fbf4e6;color:#244533;border-color:#abb898}
+.filter-help,.filter-nudge,.bundle-nudge,.support-card,.reference-context{background:#d3dfc6;color:#254b36}
+.bundle-summary{background:#e5dcc4;border:1px solid #b7c09d}
+.bundle-slot,.concentration-tool{background:#f8f1e3;border-color:#b8c0a2}
+.builder-progress>span,.quiz-progress .done{background:#255940}
+.quiz-aside{background:#cedcc1}
+.quiz-choices>button{border-color:#b6bd9e}
+.quiz-choices>button:hover,.quiz-choices>button.selected{background:#d8e1cd;color:#173e2c;border-color:#81986c}
+.actual-gallery,.quick-art,.bag-art,.reference-card-image,.reference-detail-image{background:#eee7d8}
+.product-gallery,.actual-gallery{border-color:#b9c4a5}
+.product-section-nav,.actual-notes-section,.reference-notes,.store-reference-grid>article{background:#dce4d1;border-color:#b6c3a2}
+.product-section-nav button.active{color:#164b37;border-color:#92743b}
+.variant-picker button{border-color:#adb99a;background:#f5eedf;color:#244b34}
+.variant-picker button.active{background:#164b37;color:#fff3d6;border-color:#164b37}
+.variant-picker button.active>span{color:#e2dfbb}
+.source-stock{background:#d6e1c8;color:#33523c}
+.reference-card{background:#f6efdf;border-color:#bac4a7}
+.reference-comparison-table,.reference-options-table,.size-table{background:#f8f2e6}
+.reference-options-table th,.reference-comparison-table th,.size-table th{color:#244b34}
+.reference-compare,.reference-formula{background:#e5dec9}
+.sticky-purchase{background:#f1e8d5f5;border-color:#b3bf9e}
+dialog{background:#f5eedf;color:#183c30;border-color:#a8b492}
+dialog::backdrop{background:#031f18a8;backdrop-filter:blur(4px)}
+.bag-source-notice,.bag-recommendation,.checkout-summary{background:#d9e2cc;color:#34513e}
+.search-field input,#modal input,#modal select,.order-note textarea{background:#fbf4e6;color:#244533;border-color:#a6b493}
+#compareDock,#toast{background:#113b2d;color:#fbefd5;border:1px solid #a68d50}
+@media(max-width:600px){.site-header nav{background:#0a2c23}.site-header .mega-menu{background:#123b2e}}
