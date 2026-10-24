@@ -1,5 +1,13 @@
 # Eden Musk garden direction
 
+## Selected emerald campaign
+
+The selected artwork is `assets/eden-emerald-garden.webp`, exported from the built-in image generation output. It preserves the stepped emerald bottle and square gold cap, uses a darker garden with layered greenery and distant light, and removes the closest foreground flowers. This image now appears in the homepage hero and bottle-design section. Ivory and gold text sits over a subtle dark overlay; the mobile layout shows the bottle first. Catalog product records and source photos remain unchanged.
+
+The final image-edit prompt was:
+
+> Edit the supplied Eden Musk perfume campaign image. Remove ONLY the flowers closest to the camera: the large out-of-focus white blossoms and their immediate flower stems in the bottom left foreground, along the very bottom edge, and in the bottom right foreground. Fill those areas naturally with the continuation of the shaded stone, water and subtle dark foliage already in the scene, opening up the foreground view. Preserve the exact emerald EDEN MUSK bottle and gold cap, its lettering, position and proportions. Preserve all midground and background flowers, including the smaller sharper white flowers near and behind the bottle, the garden, arches, waterfalls, water reflections, golden light and atmospheric depth. Keep the same wide aspect ratio, camera angle, composition, dark emerald palette and photographic quality. Do not remove distant flowers. Do not redesign or reposition any other elements. No additional text.
+
 ## Perfume campaign update
 
 The homepage now leads with the imagined Eden Musk perfume bottle rather than garden architecture. `assets/eden-bottle-concept.webp` is the original generated campaign artwork, created with the built-in image generation tool and exported to WebP. Faceted crystal, pale amber liquid, a pearl-like cap, gold botanical detailing and an emerald label define the concept. The homepage labels it as brand artwork; the actual shopping catalog still uses Scentora source bottle images and unchanged product data. The garden inspiration and linked religious sources remain on the story page.

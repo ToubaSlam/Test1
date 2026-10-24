@@ -1,18 +1,18 @@
 /* The imagined Eden Musk bottle leads the brand; source photos stay in the shop. */
-.home-hero.eden-perfume-hero{background:#f3f0e7;color:#173c34;min-height:720px}
+.home-hero.eden-perfume-hero{background:#0d2e24;color:#fff8e5;min-height:720px}
 .home-hero.eden-perfume-hero>.eden-hero-image{object-position:center}
-.home-hero.eden-perfume-hero:after{background:linear-gradient(90deg,#f5f2eaf2,#f5f2eacc 31%,#f5f2ea00 59%)}
+.home-hero.eden-perfume-hero:after{background:linear-gradient(90deg,#05241ed9,#05241e9c 32%,#05241e00 65%)}
 .eden-perfume-hero .hero-copy{max-width:730px;width:52%;padding:90px 0 125px 6%}
-.eden-perfume-hero .hero-copy .eyebrow{color:#5a6756;letter-spacing:2px}
-.eden-perfume-hero .hero-copy h1{font-size:clamp(64px,6vw,94px);line-height:1.02;color:#183e33;letter-spacing:-2px;margin:30px 0}
-.eden-perfume-hero .hero-copy h1 em{color:#7b632e}
-.eden-perfume-hero .hero-copy>p:not(.eyebrow){color:#4d6054;max-width:380px}
+.eden-perfume-hero .hero-copy .eyebrow{color:#e4d3a7;letter-spacing:2px}
+.eden-perfume-hero .hero-copy h1{font-size:clamp(64px,6vw,94px);line-height:1.02;color:#fff8e5;letter-spacing:-2px;margin:30px 0}
+.eden-perfume-hero .hero-copy h1 em{color:#e6cd93}
+.eden-perfume-hero .hero-copy>p:not(.eyebrow){color:#e4ebdd;max-width:380px}
 .eden-perfume-hero .eden-hero-actions{align-items:flex-start;flex-direction:column;gap:20px}
-.eden-perfume-hero .button{background:#164b3e;border-color:#164b3e;color:#fff9e9}
-.eden-perfume-hero .button:hover{background:#23624f;border-color:#23624f}
-.eden-perfume-hero .hero-quiz{color:#244a3a;border-color:#9aab90}
-.eden-perfume-hero .eden-hero-footer{color:#3a5546;border-color:#b7bca980;background:#f9f5eb80;padding:16px 18px;bottom:22px}
-.eden-perfume-hero .eden-hero-footer>a{color:#244a3a}
+.eden-perfume-hero .button{background:#e6d5a9;border-color:#e6d5a9;color:#143c30}
+.eden-perfume-hero .button:hover{background:#f5e6c3;border-color:#f5e6c3}
+.eden-perfume-hero .hero-quiz{color:#fff8e5;border-color:#d8d6bb80}
+.eden-perfume-hero .eden-hero-footer{color:#e8e8d4;border-color:#c7c5a350;background:#09271d8a;padding:16px 18px;bottom:22px}
+.eden-perfume-hero .eden-hero-footer>a{color:#fff8e5}
 .bottle-atelier{display:grid;grid-template-columns:1.05fr 1fr;gap:8%;align-items:center;background:#f2eee3;max-width:none;padding-block:80px}
 .bottle-atelier-art{margin:0;min-width:0;position:relative}
 .bottle-atelier-art img{width:100%;height:620px;object-fit:cover;object-position:84% center;border-radius:240px 240px 8px 8px;border:1px solid #ded7c4}
@@ -34,7 +34,7 @@
  .bottle-atelier-art img{height:560px}
 }
 @media(max-width:600px){
- .home-hero.eden-perfume-hero{min-height:0;background:#f4f1e8;display:flex;flex-direction:column}
+ .home-hero.eden-perfume-hero{min-height:0;background:#0d2e24;display:flex;flex-direction:column}
  .home-hero.eden-perfume-hero:after{display:none}
  .eden-perfume-hero .hero-copy{order:2;width:100%;max-width:none;padding:36px 6% 30px}
  .eden-perfume-hero .hero-copy .eyebrow{max-width:none;letter-spacing:1.5px}
