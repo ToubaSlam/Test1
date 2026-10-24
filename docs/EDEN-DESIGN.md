@@ -1,5 +1,13 @@
 # Eden Musk garden direction
 
+## Perfume campaign update
+
+The homepage now leads with the imagined Eden Musk perfume bottle rather than garden architecture. `assets/eden-bottle-concept.webp` is the original generated campaign artwork, created with the built-in image generation tool and exported to WebP. Faceted crystal, pale amber liquid, a pearl-like cap, gold botanical detailing and an emerald label define the concept. The homepage labels it as brand artwork; the actual shopping catalog still uses Scentora source bottle images and unchanged product data. The garden inspiration and linked religious sources remain on the story page.
+
+Final bottle prompt:
+
+> Use case: product-mockup. Asset type: wide 16:9 luxury perfume website campaign photograph for EDEN MUSK. Primary request: imagine a heavenly-inspired perfume bottle, a poetic artistic design concept with extraordinary craftsmanship, not a literal object from heaven. ONE exquisitely beautiful squat rectangular crystal perfume bottle with softly rounded shoulders, weighty transparent deeply faceted base, pale champagne amber liquid, subtle delicate gold filigree edge detailing, polished pale-gold collar, large luminous pearlescent ivory domed gemstone cap. Centered small deep emerald green front label with refined gold serif text exactly 'EDEN MUSK', no other text. A slim gold botanical emblem above the name. Bottle rests on an ivory travertine sculptural plinth at right center, huge prominent main subject filling the RIGHT HALF vertically, entire cap and base visible. Delicate reflections on a shallow clear water surface below, soft focus white jasmine blossoms near base, a tiny emerald silk fold draped at the extreme right. Background luminous warm ivory and pearl, a barely visible distant architectural arch on right, diffused divine-feeling studio light, realistic crystal caustics and subtle gold reflections. LEFT 45 PERCENT must be nearly empty pale ivory gradient for web text overlaid later. Luxurious fragrance advertising art direction, photographic macro material realism, restrained elegance and a believable manufactured perfume object, editorial still life, beautiful balanced composition. No other bottles, no people, no hands, no angels, no religious figures, no scripture, no calligraphy, no sacred symbols, no garden landscape, no floating objects, no giant text or slogans. Wide landscape 16:9 image.
+
 The visual identity uses emerald, warm ivory, restrained gold, botanical ornament, arched product frames and flowing-water imagery. It retains the readable 14px minimum secondary typography and 16px body copy.
 
 ## Inspiration references
