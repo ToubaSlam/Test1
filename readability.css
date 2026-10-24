@@ -26,8 +26,11 @@ nav{flex-wrap:wrap;row-gap:16px}
   .announcement a{display:block;margin-left:0}
   .launch-strip{line-height:1.5;flex-wrap:wrap;text-align:center}
   .hero-copy{padding-bottom:20px}
-  .home-hero{min-height:0;display:block}
-  .actual-hero-art{position:relative;inset:auto;height:350px;width:100%}
+  .home-hero{min-height:0;display:flex;flex-direction:column}
+  .home-hero:after{display:none}
+  .home-hero .hero-copy{order:1;width:100%}
+  .actual-hero-art{order:2;position:relative;inset:auto;height:350px;width:100%}
+  .home-hero .hero-caption{order:3;position:static;padding:15px 6%}
   .hero-copy .hero-quiz{max-width:100%;line-height:1.6}
   .product-grid .card-button{padding:11px 6px;flex-wrap:wrap}
   .product-grid .product-title>a{min-height:0}
