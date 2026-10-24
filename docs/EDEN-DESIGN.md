@@ -1,5 +1,9 @@
 # Eden Musk garden direction
 
+## Simplified storefront
+
+The homepage now uses a small 220 by 140px campaign thumbnail on desktop (92 by 120px on phones), a short introduction, the fragrance grid and three compact navigation links. The large campaign banner, bottle showcase, repeated promotional sections and announcement strip were removed from the homepage. Product images use compact rectangular frames. Full collection browsing, filters, product details, bundles, the quiz and the guide remain available through their existing routes.
+
 ## Eden Musk display naming
 
 `brand.js` separates storefront wording from the underlying source records. Display names, product brand labels, descriptions, menus, filters and reference pages use Eden Musk. Source product IDs, URL slugs, images, quantities, variants, pricing and ingredient information remain intact. Legacy source-brand links and searches still resolve. Text embedded in source photography is part of the original image asset.

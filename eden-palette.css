@@ -105,3 +105,34 @@ dialog::backdrop{background:#031f18a8;backdrop-filter:blur(4px)}
 .search-field input,#modal input,#modal select,.order-note textarea{background:#fbf4e6;color:#244533;border-color:#a6b493}
 #compareDock,#toast{background:#113b2d;color:#fbefd5;border:1px solid #a68d50}
 @media(max-width:600px){.site-header nav{background:#0a2c23}.site-header .mega-menu{background:#123b2e}}
+
+/* A simple storefront: a small brand image, then the perfume collection. */
+.site-header header{height:80px}
+.site-header nav{padding-bottom:13px}
+.home-intro{display:grid;grid-template-columns:minmax(0,1fr) 220px;align-items:center;gap:40px;padding:28px 5.5%;background:#12382c;color:#f5eddc;border-bottom:1px solid #9f8b5159}
+.home-intro .eyebrow{color:#dcc48b;margin-bottom:9px}
+.home-intro h1{font-size:44px;line-height:1.12;letter-spacing:-.7px}
+.home-intro p:not(.eyebrow){color:#d6dfca;margin-top:10px}
+.home-intro .text-link{margin-top:10px;color:#e8d09b}
+.home-intro img{width:220px;height:140px;object-fit:cover;object-position:right center;border-radius:6px;border:1px solid #a48c5266}
+.home-collection{padding-top:28px;padding-bottom:25px}
+.home-collection .section-heading .eyebrow{display:none}
+.home-collection .section-heading h2{font-size:38px}
+.home-product-grid .product-image{width:100%;height:220px;aspect-ratio:auto;max-height:none;border-radius:10px}
+.home-shortcuts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-top:15px;padding-bottom:40px}
+.home-shortcuts>a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-block:1px solid #b5bc9e;font-size:16px}
+.home-shortcuts>a:hover{color:#76602f}
+@media(max-width:600px){
+ .site-header header{height:106px}
+ .home-intro{grid-template-columns:minmax(0,1fr) 92px;gap:15px;padding:22px 5%}
+ .home-intro h1{font-size:32px;letter-spacing:-.5px}
+ .home-intro img{width:92px;height:120px;object-position:79% center}
+ .home-intro p:not(.eyebrow){grid-column:1/-1;margin-top:9px}
+ .home-intro .eyebrow{font-size:14px;letter-spacing:1px;margin-bottom:7px}
+ .home-collection{padding-top:22px}
+ .home-collection .section-heading h2{font-size:30px}
+ .home-product-grid .product-image{height:160px;aspect-ratio:auto;border-radius:8px}
+ .home-shortcuts{grid-template-columns:1fr;gap:0;padding-top:0;padding-bottom:25px}
+ .home-shortcuts>a{padding:16px 0;border-bottom:0}
+ .home-shortcuts>a:last-child{border-bottom:1px solid #b5bc9e}
+}

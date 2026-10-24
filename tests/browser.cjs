@@ -2,7 +2,7 @@ const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 (async()=>{
  const browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH||undefined});const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto('http://127.0.0.1:4173/');await page.locator('.eden-hero-image').waitFor();assert.match(await page.locator('.eden-hero h1').innerText(),/bottle/);
+ await page.goto('http://127.0.0.1:4173/');await page.locator('.eden-hero-image').waitFor();assert.match(await page.locator('.home-intro h1').innerText(),/scent/);
  await page.locator('[data-home-shop]').click();assert.equal(await page.locator('#signatureRail .product-card').count(),8);await page.locator('[data-home-more]').click();assert.equal(await page.locator('#signatureRail .product-card').count(),16);await page.locator('[data-home-gender="Women"]').click();assert.equal(await page.locator('#signatureRail .product-card').count(),8);await page.locator('[data-home-gender="All"]').click();
  // Retired ALT rows must not turn into a different product when the catalog changes.
  await page.evaluate(()=>{localStorage.setItem('maison-bag-v3',JSON.stringify([{id:1,size:30,qty:3},{id:4,size:50,qty:2}]));localStorage.setItem('maison-favorites-v3','[1,4]')});await page.reload();
