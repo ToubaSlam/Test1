@@ -13,8 +13,8 @@ test('source-listed bottles keep their quantity and integer price calculations',
 });
 test('search uses real product names, brands, inspiration and notes',()=>{
  assert.equal(filterProducts({brand:'ALT'}).length,0);
- const matches=filterProducts({query:'Imagination',brand:'Scentora'});assert.ok(matches.some(p=>p.name==='SCENTORA 246'));
- const limited=filterProducts({brand:'Scentora',maxPrice:3000});assert.ok(limited.length>0);assert.ok(limited.every(p=>p.brand==='Scentora'&&p.price<=3000));
+ const matches=filterProducts({query:'Imagination',brand:'Scentora'});assert.ok(matches.some(p=>p.name==='EDEN MUSK 246'));
+ const limited=filterProducts({brand:'Scentora',maxPrice:3000});assert.ok(limited.length>0);assert.ok(limited.every(p=>p.brand==='Eden Musk'&&p.price<=3000));
  assert.equal(filterProducts({query:'Ambre Lumiere'}).length,0);
  assert.equal(filterProducts({query:'<img src=x onerror=alert(1)>'}).length,0);
 });

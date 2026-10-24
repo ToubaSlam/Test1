@@ -1,5 +1,9 @@
 # Eden Musk garden direction
 
+## Eden Musk display naming
+
+`brand.js` separates storefront wording from the underlying source records. Display names, product brand labels, descriptions, menus, filters and reference pages use Eden Musk. Source product IDs, URL slugs, images, quantities, variants, pricing and ingredient information remain intact. Legacy source-brand links and searches still resolve. Text embedded in source photography is part of the original image asset.
+
 ## Compact homepage and direct fragrance browsing
 
 The homepage campaign is approximately 400px high on desktop and 280px on phones. The Scentora collection follows immediately, before the editorial sections. Eight product cards load initially; category filters and a show-more control let visitors browse all 47 perfumes without leaving the homepage. The hero button scrolls to the collection, while individual product links open full details and the shop link retains the dedicated filtering page.
