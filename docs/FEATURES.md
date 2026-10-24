@@ -1,13 +1,13 @@
 # Actual-perfume storefront
 
-The main shop now uses the actual ALT and Scentora perfume catalogs rather than a proposed MAISON collection. The current snapshot includes 225 perfume listings: 178 ALT and 47 Scentora. A separate source-data browser retains all 288 public listings, including non-perfume bundles, gifts, and store services.
+The main shop now uses the actual ALT and Scentora perfume catalogs rather than a proposed Eden Musk collection. The current snapshot includes 225 perfume listings: 178 ALT and 47 Scentora. A separate source-data browser retains all 288 public listings, including non-perfume bundles, gifts, and store services.
 
 ## Product fidelity
 
 | Detail | Behavior |
 | --- | --- |
 | Names and brands | Original product names and clearly visible ALT/Scentora branding |
-| Product imagery | Actual retailer photos and galleries; no relabeled MAISON bottle art |
+| Product imagery | Actual retailer photos and galleries; no relabeled Eden Musk bottle art |
 | Descriptions | Original wording based on published fragrance facts and references |
 | Inspiration | Named retailer reference where reliably provided; featured ALT references checked against public product/home pages |
 | Notes | Names mentioned in source text plus original retailer note diagrams; no invented top/heart/base assignments |
@@ -31,7 +31,7 @@ The main shop now uses the actual ALT and Scentora perfume catalogs rather than 
 
 ## Not connected
 
-MAISON stock, secure payment, real accounts, fulfillment/tracking, subscriber collection, verified review feeds, loyalty/referrals, gifts, and commercial policies still need the owner's data and services. The active bag is a planning tool, not an order. Source retailer offers and guarantees are not MAISON offers.
+Eden Musk stock, secure payment, real accounts, fulfillment/tracking, subscriber collection, verified review feeds, loyalty/referrals, gifts, and commercial policies still need the owner's data and services. The active bag is a planning tool, not an order. Source retailer offers and guarantees are not Eden Musk offers.
 
 ## Validation
 

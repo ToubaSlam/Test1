@@ -1,8 +1,8 @@
-# MAISON fragrance storefront
+# Eden Musk fragrance storefront
 
 Live: https://toubaslam.github.io/Test1/
 
-The main collection presents 225 actual perfume listings: 178 from ALT and 47 from Scentora in the current source snapshot. Products retain their original names, brands, pictures, bottle options, SKU, source prices, notes, and published ingredient details. Descriptions are written in original wording around the published facts, not copied marketing prose. No invented MAISON perfume is used in the active collection.
+The main collection presents 225 actual perfume listings: 178 from ALT and 47 from Scentora in the current source snapshot. Products retain their original names, brands, pictures, bottle options, SKU, source prices, notes, and published ingredient details. Descriptions are written in original wording around the published facts, not copied marketing prose. No invented Eden Musk perfume is used in the active collection.
 
 ## Preview locally
 
@@ -18,7 +18,7 @@ Run `python -m http.server 4173 --bind 127.0.0.1` in this folder, then open http
 - `data/reference-catalogs.json`: the complete 288-listing public-feed snapshot, including bundles, gifts, and store services.
 - `reference-catalogs.js`: additional source-data browser. The actual perfumes also appear directly in the main shop.
 
-Source images stay branded ALT or Scentora; they are not relabeled as MAISON bottles. The former prototype scripts and generated campaign asset are retained but are not used to represent the actual products.
+Source images stay branded ALT or Scentora; they are not relabeled as Eden Musk bottles. The former prototype scripts and generated campaign asset are retained but are not used to represent the actual products.
 
 ## Refresh published facts
 
@@ -30,4 +30,4 @@ Run `npm test` and `npm run check`. For browser checks: install dependencies, in
 
 ## Ordering status
 
-The bag is a browser-local plan using actual source product options and prices. MAISON inventory, payments, accounts, shipping, fulfillment, reviews, discounts, and gifts are not connected. Source availability is a dated retailer observation, not MAISON stock. Retailer promotions and guarantees do not automatically apply to a MAISON bag. Original retailer links are available on each perfume page.
+The bag is a browser-local plan using actual source product options and prices. Eden Musk inventory, payments, accounts, shipping, fulfillment, reviews, discounts, and gifts are not connected. Source availability is a dated retailer observation, not Eden Musk stock. Retailer promotions and guarantees do not automatically apply to a Eden Musk bag. Original retailer links are available on each perfume page.

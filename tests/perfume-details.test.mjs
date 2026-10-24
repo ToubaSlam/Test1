@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {products} from '../catalog.js';
 import {productQuestions,detailSections,actualProductView} from '../actual-products.js';
-test('main shop contains actual source perfumes, not invented MAISON names or prices',()=>{
+test('main shop contains actual source perfumes, not invented Eden Musk names or prices',()=>{
  assert.equal(products.length,225);assert.equal(new Set(products.map(p=>p.slug)).size,225);
  for(const p of products){assert.equal(p.name,p.source.name);assert.equal(p.brand,p.source.brand);assert.equal(p.variants.length,p.source.variants.length);assert.ok(p.description.includes(p.name));assert.ok(p.source.images.length);for(let i=0;i<p.variants.length;i++){assert.equal(p.variants[i].label,p.source.variants[i].title);assert.equal(p.variants[i].price,p.source.variants[i].price);assert.equal(p.variants[i].sku,p.source.variants[i].sku)}assert.equal(productQuestions(p).length,10)}
  assert.equal(products[0].name,'Crystal');assert.equal(products[1].name,'Executive');
