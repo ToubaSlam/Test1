@@ -33,6 +33,7 @@
  .bottle-atelier{gap:5%;padding-inline:5%}
  .bottle-atelier-art img{height:560px}
 }
+
 @media(max-width:600px){
  .home-hero.eden-perfume-hero{min-height:0;background:#0d2e24;display:flex;flex-direction:column}
  .home-hero.eden-perfume-hero:after{display:none}
@@ -47,4 +48,43 @@
  .bottle-atelier-art img{height:460px;object-position:right center;border-radius:180px 180px 8px 8px}
  .bottle-atelier-copy h2{font-size:44px}
  .bottle-design-notes>div{gap:12px;grid-template-columns:30px 1fr}
+}
+
+/* Compact campaign, with the complete fragrance collection accessible below. */
+.home-hero.eden-perfume-hero{min-height:400px}
+.home-hero.eden-perfume-hero>.eden-hero-image{width:64%;left:auto;right:0;object-position:center}
+.eden-perfume-hero .hero-copy{padding:30px 0 65px 6%;width:52%;max-width:680px}
+.eden-perfume-hero .hero-copy .eyebrow{margin-bottom:10px}
+.eden-perfume-hero .hero-copy h1{font-size:58px;margin:12px 0;line-height:1.02}
+.eden-perfume-hero .hero-copy>p:not(.eyebrow){margin:12px 0 18px;max-width:410px}
+.eden-perfume-hero .eden-hero-actions{flex-direction:row;align-items:center;gap:15px 22px}
+.eden-perfume-hero .button{padding:12px 18px;min-height:48px}
+.eden-perfume-hero .eden-hero-footer{bottom:10px;padding:8px 12px;background:#09271db3}
+.home-collection{padding-top:34px;padding-bottom:40px;scroll-margin-top:180px}
+.home-collection .section-heading{margin-bottom:20px}
+.home-product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:30px 22px}
+.home-collection-more{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;margin:30px 0 16px}
+.home-collection .gender-tabs{margin-bottom:22px}
+@media(max-width:1000px) and (min-width:601px){
+ .home-hero.eden-perfume-hero{min-height:410px}
+ .eden-perfume-hero .hero-copy h1{font-size:54px}
+ .home-product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:600px){
+ .home-hero.eden-perfume-hero{display:block;min-height:280px}
+ .home-hero.eden-perfume-hero>.eden-hero-image{position:absolute;inset:0;width:100%;height:100%;object-position:75% center}
+ .home-hero.eden-perfume-hero:after{display:block;background:linear-gradient(90deg,#05241ee8,#05241ea8 52%,#05241e1f)}
+ .eden-perfume-hero .hero-copy{position:relative;width:68%;max-width:none;padding:24px 0 24px 6%}
+ .eden-perfume-hero .hero-copy .eyebrow{font-size:14px;letter-spacing:1px;max-width:180px;margin-bottom:10px}
+ .eden-perfume-hero .hero-copy h1{font-size:42px;margin:12px 0 20px;letter-spacing:-1px}
+ .eden-perfume-hero .hero-copy>p:not(.eyebrow),.eden-perfume-hero .hero-quiz,.eden-perfume-hero .eden-hero-footer{display:none}
+ .eden-perfume-hero .button{width:auto;max-width:100%;padding:12px;gap:12px;font-size:14px}
+ .home-collection{padding-top:26px;scroll-margin-top:132px}
+ .home-collection .section-heading{gap:14px;margin-bottom:18px}
+ .home-collection .section-heading h2{font-size:34px}
+ .home-collection .section-heading .eyebrow{letter-spacing:1px;margin-bottom:8px}
+ .home-collection .section-heading>.text-link{max-width:95px}
+ .home-collection .gender-tabs{gap:7px;flex-wrap:wrap;overflow:visible}
+ .home-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 14px}
+ .home-collection-more{flex-direction:column;gap:14px;margin-top:28px}
 }

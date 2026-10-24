@@ -1,5 +1,9 @@
 # Eden Musk garden direction
 
+## Compact homepage and direct fragrance browsing
+
+The homepage campaign is approximately 400px high on desktop and 280px on phones. The Scentora collection follows immediately, before the editorial sections. Eight product cards load initially; category filters and a show-more control let visitors browse all 47 perfumes without leaving the homepage. The hero button scrolls to the collection, while individual product links open full details and the shop link retains the dedicated filtering page.
+
 ## Site-wide color palette
 
 `eden-palette.css` carries the selected campaign colors across navigation, menus, product cards, forms, sections, dialogs and the footer. Forest emerald `#0a2c23`, water teal `#17483f`, warm stone `#f1eadc`, ivory `#f5eddc` and muted gold `#c6a96b` define the palette. Pale product surfaces preserve the clarity of the original source photos. Checked nine routes at desktop and phone widths; 69 sampled text elements on solid dark surfaces passed the applicable WCAG AA contrast threshold. Text over the campaign image was reviewed visually.
